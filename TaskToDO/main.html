@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="dist/css/bootstrap.css">
+    <script src="main.js"></script>
+
+</head>
+
+<body class="bg-light">
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+                <h3 class="text-center text-primary mb-4">Single Page Inventory Application</h3>
+                <form id="internApplicationForm">
+
+                    <div class="mb-3">
+                        <label for="internName" class="form-label">Intern Name:</label>
+                        <input type="text" class="form-control" id="internName" name="internName"
+                            placeholder="Enter your name" required>
+                        <i id="nameerror" class="text-danger"></i>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Why should you be hired for this role?</label>
+                        <textarea class="form-control" id="description" name="description"
+                            placeholder="Enter your response" required></textarea>
+                        <i id="descerror" class="text-danger"></i>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="imageUpload" class="form-label">Upload Image:</label>
+                        <input type="file" class="form-control" id="imageUpload" name="imageUpload" accept="image/*"
+                            onchange="previewImage()" required>
+                        <img id="selectedImage" alt="Selected Image">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="duration" class="form-label">Choose Duration:</label>
+                        <select id="duration" name="duration" class="form-select" required>
+                            <option value="">Select</option>
+                            <option value="1m">One month</option>
+                            <option value="3m">Three months</option>
+                            <option value="6m">Six months</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                        <i id="durationerror" class="text-danger"></i>
+                    </div>
+
+                    <table>
+                        <tr>
+                            <td class="text-success fs-4">Which role are you applying for?</td>
+                            <td><label><input type="radio" name="q1" value="Frontend" required>Frontend
+                                    Development</label></td>
+                            <td><label><input type="radio" name="q1" value="Backend" required>Backend
+                                    Development</label></td>
+                            <td><label><input type="radio" name="q1" value="Full" required>Full Stack
+                                    Development</label></td>
+                        </tr>
+                        <tr>
+                            <td class="text-success fs-4">In which mode do you need to work?</td>
+                            <td><label><input type="radio" name="q2" value="Onsite" required> Onsite Mode</label></td>
+                            <td><label><input type="radio" name="q2" value="Hybrid" required> Hybrid Mode</label></td>
+                            <td><label><input type="radio" name="q2" value="Remote" required> Remote Mode</label></td>
+                        </tr>
+                        <tr>
+                            <td class="text-success fs-4">Willing to work as?</td>
+                            <td><label><input type="radio" name="q3" value="Full-Time" required> Full-Time</label></td>
+                            <td><label><input type="radio" name="q3" value="Part-Time" required> Part-Time</label></td>
+                            <td><label><input type="radio" name="q3" value="Freelancer" required> Freelancer</label>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="text-center">
+                        <button type="button" id="submitButton" class="btn btn-primary" onclick="submitfn()">Submit
+                            Answers</button>
+                    </div>
+
+                </form>
+            </div>
+            <div class="col-lg-2"></div>
+        </div>
+    </div>
+</body>
+
+</html>
